@@ -1,5 +1,9 @@
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class Graphic {
 
@@ -40,6 +44,16 @@ public class Graphic {
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("SWT Application");
+		
+		Button btnNewButton = new Button(shell, SWT.NONE);
+		btnNewButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				System.out.println("ciao");
+			}
+		});
+		btnNewButton.setBounds(0, 124, 75, 25);
+		btnNewButton.setText("New Button");
 
 	}
 
